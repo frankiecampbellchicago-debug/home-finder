@@ -211,7 +211,7 @@ if ($("#doors")) {
       if (!e.isIntersecting) return;
       co.unobserve(e.target);
       const el = e.target, to = +el.dataset.count, suf = el.dataset.suffix || "", t0 = performance.now();
-      const step = t => { const k = clamp((t - t0) / 1400); el.textContent = Math.round(to * (1 - Math.pow(1 - k, 3))) + suf; if (k < 1) requestAnimationFrame(step); };
+      const step = t => { const k = clamp((t - t0) / 2600); el.textContent = Math.round(to * (1 - Math.pow(1 - k, 3))) + suf; if (k < 1) requestAnimationFrame(step); };
       requestAnimationFrame(step);
     }), {threshold:.6});
     $$("[data-count]").forEach(el => co.observe(el));
