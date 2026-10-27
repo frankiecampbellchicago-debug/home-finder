@@ -25,6 +25,7 @@
       <li><a href="homes.html">Homes</a></li>
       <li><a href="#process">Buying</a></li>
       <li><a href="#sell">Selling</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <a class="btn" href="#contact">Book a viewing</a>
@@ -119,16 +120,27 @@
     </div>
   </section>
 
-  <section class="reviews">
-    <div class="wrap">
-      <div class="center rv">
-        <p class="eyebrow">Kind words</p>
-        <h2>Clients, now <em>neighbors</em></h2>
+  <section class="trust" id="reviews" aria-label="Client reviews">
+    <img class="trust-bg" src="images/int-living-bright-800.webp" srcset="images/int-living-bright-800.webp 800w, images/int-living-bright.webp 1600w" sizes="100vw" alt="" loading="lazy">
+    <div class="wrap trust-in rv">
+      <div class="trust-head">
+        <p class="eyebrow">See what people are saying</p>
+        <div class="trust-nav">
+          <button class="trust-arrow" id="revPrev" type="button" aria-label="Previous review">&#8592;</button>
+          <span class="trust-count" id="revCount">1 / 6</span>
+          <button class="trust-arrow" id="revNext" type="button" aria-label="Next review">&#8594;</button>
+        </div>
       </div>
-      <div class="quotes">
-        <figure class="quote rv" style="margin:0"><div class="stars" aria-label="5 out of 5">★★★★★</div><p>They talked us out of two houses and into the right one. We'd never have found it on our own.</p><footer>Maya &amp; Tom · Bought in Cedar Ridge</footer></figure>
-        <figure class="quote rv" style="margin:0"><div class="stars" aria-label="5 out of 5">★★★★★</div><p>Sold in eleven days, above asking. The weekly updates meant we never had to chase anyone.</p><footer>Daniel R. · Sold in Old Orchard</footer></figure>
-        <figure class="quote rv" style="margin:0"><div class="stars" aria-label="5 out of 5">★★★★★</div><p>First-time buyers and totally lost. They explained every step and every number. Calm, honest, brilliant.</p><footer>Priya S. · Bought in Riverside</footer></figure>
+      <div class="trust-slider"><div class="trust-track" id="revTrack" aria-live="polite"></div></div>
+      <div class="trust-sources">
+        <span class="trust-note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>Reviews from Home Finder clients</span>
+        <a class="trust-link" href="reviews.html">Read all reviews &#8594;</a>
+      </div>
+      <div class="trust-points">
+        <div><b>Licensed agents</b><span>Every agent is licensed, insured and full time.</span></div>
+        <div><b>Real sale data</b><span>Prices backed by what homes on your street sold for.</span></div>
+        <div><b>No pressure</b><span>Honest advice, even when it means "keep looking".</span></div>
+        <div><b>Weekly updates</b><span>You'll always know where things stand.</span></div>
       </div>
     </div>
   </section>
@@ -167,7 +179,7 @@
         <a class="logo" href="./"><svg viewBox="0 0 40 40" fill="none" stroke="#c6a46c" stroke-width="1.4" aria-hidden="true"><path d="M4 18 20 5l16 13"/><path d="M8.5 15v20h23V15"/><path d="M16 35v-9a4 4 0 0 1 8 0v9"/></svg>Home <span>Finder</span></a>
         <p>Homes worth coming home to. Buying, selling and everything in between.</p>
       </div>
-      <div><h4>Explore</h4><ul><li><a href="#featured">Featured</a></li><li><a href="homes.html">Homes for sale</a></li><li><a href="#process">Buying</a></li><li><a href="#sell">Selling</a></li></ul></div>
+      <div><h4>Explore</h4><ul><li><a href="#featured">Featured</a></li><li><a href="homes.html">Homes for sale</a></li><li><a href="#process">Buying</a></li><li><a href="#sell">Selling</a></li><li><a href="reviews.html">Reviews</a></li></ul></div>
       <div><h4>Neighborhoods</h4><ul id="f-areas"></ul></div>
       <div><h4>Contact</h4><ul><li><a href="tel:+15550142290">+1 (555) 014-2290</a></li><li><a href="mailto:hello@homefinder.com">hello@homefinder.com</a></li><li><a href="#contact">Book a viewing</a></li></ul></div>
     </div>

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Client reviews | Home Finder</title>
+<meta name="description" content="Home Finder helps you buy and sell homes with less guesswork. Browse homes for sale, step inside our featured residences and book a viewing.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:opsz,wght@14..32,300..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="inner">
+<a class="skip" href="#main">Skip to content</a>
+
+<nav id="nav">
+  <div class="wrap">
+    <a class="logo" href="index.html" aria-label="Home Finder home">
+      <svg viewBox="0 0 40 40" fill="none" stroke="#c6a46c" stroke-width="1.4" aria-hidden="true"><path d="M4 18 20 5l16 13"/><path d="M8.5 15v20h23V15"/><path d="M16 35v-9a4 4 0 0 1 8 0v9"/></svg>
+      Home <span>Finder</span>
+    </a>
+    <ul class="links" id="links">
+      <li><a href="index.html#featured">Featured</a></li>
+      <li><a href="homes.html">Homes</a></li>
+      <li><a href="index.html#process">Buying</a></li>
+      <li><a href="index.html#sell">Selling</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a class="btn" href="index.html#contact">Book a viewing</a>
+    <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="links"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<main id="main">
+  <header class="page-head dark">
+    <div class="wrap center">
+      <p class="eyebrow">Reviews</p>
+      <h1>What our clients <em>say</em></h1>
+      <p class="lede">Buyers and sellers, first homes and fortieth anniversaries. Here's how it went for them.</p>
+    </div>
+  </header>
+  <section class="reviews-page">
+    <div class="wrap">
+      <div class="quotes" id="allReviews"></div>
+      <div class="trust-sources light"><span class="trust-note"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>Reviews from Home Finder clients</span></div>
+    </div>
+  </section>
+  <section class="dark">
+    <div class="wrap center">
+      <p class="eyebrow">Your turn</p>
+      <h2>Want a move like <em>theirs?</em></h2>
+      <p class="lede">Whether you're buying or selling, it starts with a short, no-pressure call.</p>
+      <div style="margin-top:40px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap"><a class="btn" href="index.html#contact">Talk to an agent</a><a class="btn line" href="homes.html">Browse homes</a></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="logo" href="./"><svg viewBox="0 0 40 40" fill="none" stroke="#c6a46c" stroke-width="1.4" aria-hidden="true"><path d="M4 18 20 5l16 13"/><path d="M8.5 15v20h23V15"/><path d="M16 35v-9a4 4 0 0 1 8 0v9"/></svg>Home <span>Finder</span></a>
+        <p>Homes worth coming home to. Buying, selling and everything in between.</p>
+      </div>
+      <div><h4>Explore</h4><ul><li><a href="index.html#featured">Featured</a></li><li><a href="homes.html">Homes for sale</a></li><li><a href="index.html#process">Buying</a></li><li><a href="index.html#sell">Selling</a></li><li><a href="reviews.html">Reviews</a></li></ul></div>
+      <div><h4>Neighborhoods</h4><ul id="f-areas"></ul></div>
+      <div><h4>Contact</h4><ul><li><a href="tel:+15550142290">+1 (555) 014-2290</a></li><li><a href="mailto:hello@homefinder.com">hello@homefinder.com</a></li><li><a href="index.html#contact">Book a viewing</a></li></ul></div>
+    </div>
+    <div class="base"><span>© <span id="yr">2026</span> Home Finder. All rights reserved.</span><span>Equal housing opportunity</span></div>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="site.js"></script>
+</body>
+</html>

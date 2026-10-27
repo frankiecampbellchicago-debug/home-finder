@@ -218,6 +218,34 @@ if ($("#doors")) {
   }
 }
 
+/* reviews: one at a time on the homepage (arrows, counter, swipe), all of them on reviews.html */
+const stars = '<div class="stars" aria-label="5 out of 5 stars">★★★★★</div>';
+if ($("#revTrack")) {
+  const list = REVIEWS.slice(0, 6), track = $("#revTrack"), count = $("#revCount");
+  track.innerHTML = list.map((r, i) => `<figure class="trust-slide" aria-roledescription="slide" aria-label="${i + 1} of ${list.length}"${i ? ' aria-hidden="true"' : ""}>${stars}<blockquote>“${esc(r.text)}”</blockquote><figcaption><b>${esc(r.by)}</b>${esc(r.what)}</figcaption></figure>`).join("");
+  const slides = $$(".trust-slide", track);
+  let at = 0;
+  const go = i => {
+    at = (i + list.length) % list.length;
+    track.style.transform = `translateX(-${at * 100}%)`;
+    count.textContent = `${at + 1} / ${list.length}`;
+    slides.forEach((s, j) => s.setAttribute("aria-hidden", j !== at));
+  };
+  $("#revPrev").addEventListener("click", () => go(at - 1));
+  $("#revNext").addEventListener("click", () => go(at + 1));
+  let startX = null;
+  track.addEventListener("touchstart", e => { startX = e.touches[0].clientX; }, {passive:true});
+  track.addEventListener("touchend", e => {
+    if (startX === null) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) go(dx < 0 ? at + 1 : at - 1);
+    startX = null;
+  }, {passive:true});
+}
+if ($("#allReviews")) {
+  $("#allReviews").innerHTML = REVIEWS.map(r => `<figure class="quote rv" style="margin:0">${stars}<p>“${esc(r.text)}”</p><footer><b>${esc(r.by)}</b><br>${esc(r.what)}</footer></figure>`).join("");
+}
+
 /* ---------- listing page ---------- */
 if ($("#detail")) {
   const id = new URLSearchParams(location.search).get("id");

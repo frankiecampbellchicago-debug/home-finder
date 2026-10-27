@@ -75,5 +75,18 @@ const HOMES = [
    features:["Six acres","Full-length west deck","Vaulted great room","Detached barn","Fenced paddock","Well and septic"]}
 ];
 
+/* Reviews: the first 6 rotate in the homepage slider, reviews.html shows them all. Placeholders: swap in real ones. */
+const REVIEWS = [
+  {by:"Maya & Tom", what:"Bought in Cedar Ridge", text:"They talked us out of two houses and into the right one. We'd never have found it on our own, and we've loved every day here since."},
+  {by:"Daniel R.", what:"Sold in Old Orchard", text:"Sold in eleven days, above asking. The weekly updates meant we never had to chase anyone, and the photos made our house look incredible."},
+  {by:"Priya S.", what:"Bought in Riverside", text:"First-time buyers and totally lost. They explained every step and every number. Calm, honest, brilliant from the first call to the keys."},
+  {by:"James & Ana", what:"Bought in Harbor Point", text:"We were relocating from overseas and bought without seeing the house in person. Video tours, straight answers, zero surprises on move-in day."},
+  {by:"Claire W.", what:"Sold in Vista Heights", text:"Their valuation was spot on. We had three offers in the first weekend and they handled the negotiation so we didn't have to."},
+  {by:"Marcus T.", what:"Bought in Old Orchard", text:"No pressure, ever. When the inspection turned up a roof issue, they got the seller to fix it before closing. That alone saved us thousands."},
+  {by:"Helen G.", what:"Sold in Cedar Ridge", text:"After forty years in the same home, selling was emotional. They were patient and kind, and still got us a price we didn't expect."},
+  {by:"The Okafor family", what:"Bought in Vista Heights", text:"They found us a home with room for three kids and a garden before it ever hit the market. We're so grateful."},
+  {by:"Sam L.", what:"Bought in Riverside", text:"Quick to reply, honest about which homes were overpriced, and genuinely nice people. I'll use them again when it's time to upgrade."}
+];
+
 const money = n => "$" + n.toLocaleString("en-US");
 const shortMoney = n => n >= 1e6 ? "$" + (n/1e6).toFixed(n % 1e6 ? 2 : 0).replace(/0$/,"") + "M" : "$" + Math.round(n/1e3) + "K";
