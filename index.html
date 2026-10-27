@@ -22,7 +22,7 @@
     </a>
     <ul class="links" id="links">
       <li><a href="#featured">Featured</a></li>
-      <li><a href="#homes">Homes</a></li>
+      <li><a href="homes.html">Homes</a></li>
       <li><a href="#process">Buying</a></li>
       <li><a href="#sell">Selling</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -39,7 +39,7 @@
       <p class="hero-label">Buy · Sell · Move in</p>
       <h1><span class="w">Find the place</span> <span class="w" style="animation-delay:.15s">you'll call <em>home.</em></span></h1>
       <p class="hero-sub">Hand-picked homes, honest advice and agents who pick up the phone. We'll walk you from first viewing to keys in hand.</p>
-      <form class="search" id="search" role="search" aria-label="Search homes">
+      <form class="search" id="search" role="search" aria-label="Search homes" action="homes.html">
         <label><span>Neighborhood</span>
           <select name="area" id="s-area"><option value="">All neighborhoods</option></select></label>
         <label><span>Home type</span>
@@ -74,23 +74,10 @@
       <div class="center rv">
         <p class="eyebrow">On the market</p>
         <h2>Homes for <em>sale</em></h2>
-        <p class="lede">Every home here has been visited by one of our agents. Tap the heart to save the ones you like.</p>
+        <p class="lede">A few of the newest homes on our books. Every one has been visited by one of our agents.</p>
       </div>
-      <div class="filters">
-        <div class="chips" role="group" aria-label="Filter by status">
-          <button class="chip" type="button" data-status="" aria-pressed="true">All</button>
-          <button class="chip" type="button" data-status="New" aria-pressed="false">New</button>
-          <button class="chip" type="button" data-status="For sale" aria-pressed="false">For sale</button>
-          <button class="chip" type="button" data-status="Pending" aria-pressed="false">Pending</button>
-          <button class="chip" type="button" data-status="Sold" aria-pressed="false">Sold</button>
-          <button class="chip" type="button" data-status="saved" aria-pressed="false">Saved</button>
-        </div>
-        <label class="sort">Sort
-          <select id="sort"><option value="feat">Featured</option><option value="low">Price, low to high</option><option value="high">Price, high to low</option><option value="size">Largest first</option></select>
-        </label>
-      </div>
-      <p class="count" id="count" aria-live="polite"></p>
-      <div class="grid" id="grid"></div>
+      <div class="grid" id="grid" data-limit="6" style="margin-top:64px"></div>
+      <div class="center" style="margin-top:56px"><a class="btn line" href="homes.html">View all homes</a></div>
     </div>
   </section>
 
@@ -180,7 +167,7 @@
         <a class="logo" href="./"><svg viewBox="0 0 40 40" fill="none" stroke="#c6a46c" stroke-width="1.4" aria-hidden="true"><path d="M4 18 20 5l16 13"/><path d="M8.5 15v20h23V15"/><path d="M16 35v-9a4 4 0 0 1 8 0v9"/></svg>Home <span>Finder</span></a>
         <p>Homes worth coming home to. Buying, selling and everything in between.</p>
       </div>
-      <div><h4>Explore</h4><ul><li><a href="#featured">Featured</a></li><li><a href="#homes">Homes for sale</a></li><li><a href="#process">Buying</a></li><li><a href="#sell">Selling</a></li></ul></div>
+      <div><h4>Explore</h4><ul><li><a href="#featured">Featured</a></li><li><a href="homes.html">Homes for sale</a></li><li><a href="#process">Buying</a></li><li><a href="#sell">Selling</a></li></ul></div>
       <div><h4>Neighborhoods</h4><ul id="f-areas"></ul></div>
       <div><h4>Contact</h4><ul><li><a href="tel:+15550142290">+1 (555) 014-2290</a></li><li><a href="mailto:hello@homefinder.com">hello@homefinder.com</a></li><li><a href="#contact">Book a viewing</a></li></ul></div>
     </div>

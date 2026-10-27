@@ -20,7 +20,7 @@ burger.addEventListener("click", () => {
 });
 $$(".links a").forEach(a => a.addEventListener("click", () => { nav.classList.remove("open"); burger.setAttribute("aria-expanded", false); }));
 $("#yr").textContent = new Date().getFullYear();
-$("#f-areas").innerHTML = areas.map(a => `<li><a href="index.html?area=${encodeURIComponent(a)}#homes">${a}</a></li>`).join("");
+$("#f-areas").innerHTML = areas.map(a => `<li><a href="homes.html?area=${encodeURIComponent(a)}">${a}</a></li>`).join("");
 
 /* saved homes (kept in this browser only) */
 let saved;
@@ -112,35 +112,52 @@ function renderGrid() {
     (!filter.max || h.price <= filter.max));
   const by = {low:(a,b)=>a.price-b.price, high:(a,b)=>b.price-a.price, size:(a,b)=>b.sqft-a.sqft};
   if (by[filter.sort]) list = [...list].sort(by[filter.sort]);
+  if (grid.dataset.limit) list = list.filter(h => h.status !== "Sold").slice(0, +grid.dataset.limit);
   grid.innerHTML = list.length ? list.map(card).join("")
     : `<p class="empty">${filter.status === "saved" ? "No saved homes yet. Tap the heart on any home to keep it here." : "No homes match that search yet. Try widening it, or ask us: new homes come in every week."}</p>`;
+  if (!$("#count")) return watch();
   const extra = [filter.area, filter.type, filter.max && "under " + shortMoney(filter.max)].filter(Boolean).join(", ");
   $("#count").textContent = `Showing ${list.length} of ${HOMES.length} homes${extra ? " · " + extra : ""}`;
   watch();
 }
 
 if ($("#grid")) {
-  const opts = areas.map(a => `<option>${a}</option>`).join("");
-  $("#s-area").insertAdjacentHTML("beforeend", opts);
-  $("#c-home").insertAdjacentHTML("beforeend", HOMES.filter(h => h.status !== "Sold").map(h => `<option>${esc(h.name)}</option>`).join(""));
-
   const q = new URLSearchParams(location.search);
-  if (q.get("area")) { filter.area = q.get("area"); $("#s-area").value = filter.area; }
-  if (q.get("home")) $("#c-home").value = q.get("home");
-
-  $("#search").addEventListener("submit", e => {
-    e.preventDefault();
-    filter.area = $("#s-area").value; filter.type = $("#s-type").value; filter.max = +$("#s-max").value || 0;
-    renderGrid();
-    $("#homes").scrollIntoView({behavior: calm ? "auto" : "smooth"});
-  });
+  const sel = {area:"#f-area", type:"#f-type", max:"#f-max"};
+  if ($("#f-area")) $("#f-area").insertAdjacentHTML("beforeend", areas.map(a => `<option>${a}</option>`).join(""));
+  for (const k in sel) {
+    if (q.get(k)) filter[k] = k === "max" ? +q.get(k) || 0 : q.get(k);
+    const el = $(sel[k]);
+    if (!el) continue;
+    el.value = q.get(k) || "";
+    el.addEventListener("change", () => {
+      filter[k] = k === "max" ? +el.value || 0 : el.value;
+      const p = new URLSearchParams(location.search);
+      el.value ? p.set(k, el.value) : p.delete(k);
+      history.replaceState(null, "", "?" + p);
+      renderGrid();
+    });
+  }
   $$(".chip").forEach(c => c.addEventListener("click", () => {
     $$(".chip").forEach(x => x.setAttribute("aria-pressed", x === c));
     filter.status = c.dataset.status; renderGrid();
   }));
-  $("#sort").addEventListener("change", e => { filter.sort = e.target.value; renderGrid(); });
+  $("#sort")?.addEventListener("change", e => { filter.sort = e.target.value; renderGrid(); });
   renderGrid();
+}
 
+if ($("#search")) {
+  $("#s-area").insertAdjacentHTML("beforeend", areas.map(a => `<option>${a}</option>`).join(""));
+  $("#c-home").insertAdjacentHTML("beforeend", HOMES.filter(h => h.status !== "Sold").map(h => `<option>${esc(h.name)}</option>`).join(""));
+  /* the hero search sends people to the full homes page; drop the empty fields so the link stays tidy */
+  $("#search").addEventListener("submit", e => {
+    e.preventDefault();
+    const p = new URLSearchParams([...new FormData(e.target)].filter(([, v]) => v));
+    location.href = "homes.html" + (p.size ? "?" + p : "");
+  });
+}
+
+if ($("#doors")) {
   /* "Step inside": each featured home sits behind an arched doorway that opens to full screen as you scroll */
   const feat = HOMES.filter(h => h.featured).sort((a, b) => a.featured - b.featured);
   const pad = n => String(n).padStart(2, "0");
