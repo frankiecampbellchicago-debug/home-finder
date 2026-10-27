@@ -210,11 +210,12 @@ if ($("#doors")) {
     const co = new IntersectionObserver(es => es.forEach(e => {
       if (!e.isIntersecting) return;
       co.unobserve(e.target);
-      const el = e.target, to = +el.dataset.count, suf = el.dataset.suffix || "", t0 = performance.now();
-      const step = t => { const k = clamp((t - t0) / 2600); el.textContent = Math.round(to * (1 - Math.pow(1 - k, 3))) + suf; if (k < 1) requestAnimationFrame(step); };
+      const el = e.target, to = +el.dataset.count, suf = el.dataset.suffix || "", dec = +(el.dataset.dec || 0), t0 = performance.now();
+      /* 4 seconds with a gentle ease-out, so the numbers visibly climb the whole way */
+      const step = t => { const k = clamp((t - t0) / 4000); el.textContent = (to * (1 - Math.pow(1 - k, 2))).toFixed(dec) + suf; if (k < 1) requestAnimationFrame(step); };
       requestAnimationFrame(step);
     }), {threshold:.6});
-    $$("[data-count]").forEach(el => co.observe(el));
+    $$("[data-count]").forEach(el => { el.textContent = (0).toFixed(+(el.dataset.dec || 0)) + (el.dataset.suffix || ""); co.observe(el); });
   }
 }
 
