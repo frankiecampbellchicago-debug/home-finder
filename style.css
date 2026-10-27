@@ -25,9 +25,8 @@ section{padding:120px 0}
 .lede{max-width:560px;margin:20px auto 0;color:var(--muted)}
 .dark .lede{color:var(--night-muted)}
 
-/* small spaced label above a heading, hairline either side (not in the hero) */
+/* small spaced label above a heading (no side dashes, per the user) */
 .eyebrow{display:inline-flex;align-items:center;gap:14px;font:500 11.5px/1 var(--sans);letter-spacing:.32em;text-transform:uppercase;color:var(--brass-ink);margin-bottom:22px}
-.eyebrow::before,.eyebrow::after{content:"";width:28px;height:1px;background:currentColor;opacity:.6}
 .dark .eyebrow{color:var(--brass)}
 
 .dark{background:var(--night);color:var(--night-text)}
