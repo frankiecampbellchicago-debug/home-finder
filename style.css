@@ -336,10 +336,10 @@ footer.site .base{display:flex;justify-content:space-between;flex-wrap:wrap;gap:
 /* reviews band: a rounded panel over a night photo, one review at a time with round arrows + counter
    (same layout as the Don & John site, in Home Finder colors) */
 .trust{background:var(--cream);padding:40px 24px 110px}
-.trust-card{position:relative;overflow:hidden;max-width:1240px;margin:0 auto;border-radius:20px;background:var(--night);color:var(--night-text)}
+.trust-card{position:relative;overflow:hidden;max-width:1180px;margin:0 auto;border-radius:20px;background:var(--night);color:var(--night-text)}
 .trust-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .trust-card::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(105deg,rgba(12,16,21,.95) 0%,rgba(18,23,29,.84) 55%,rgba(48,40,28,.62) 100%)}
-.trust-in{position:relative;z-index:2;padding:clamp(28px,4vw,56px)}
+.trust-in{position:relative;z-index:2;padding:clamp(26px,3.5vw,48px)}
 .trust-head{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:20px}
 .trust-label{font:600 13px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--night-text)}
 .trust-nav{display:flex;align-items:center;gap:22px}
@@ -351,16 +351,16 @@ footer.site .base{display:flex;justify-content:space-between;flex-wrap:wrap;gap:
 .trust-track{display:flex;transition:transform .6s cubic-bezier(.2,.7,.2,1);touch-action:pan-y}
 .trust-slide{flex:0 0 100%;min-width:100%;margin:0}
 .trust-slide .stars{color:var(--brass);font-size:16px;letter-spacing:.18em;margin-bottom:16px}
-.trust-slide blockquote{margin:0;max-width:760px;font:650 clamp(19px,1.9vw,25px)/1.4 var(--sans);letter-spacing:-.02em;color:#fff}
+.trust-slide blockquote{margin:0;max-width:760px;font:650 clamp(18px,1.75vw,23px)/1.4 var(--sans);letter-spacing:-.02em;color:#fff}
 .trust-slide figcaption{margin-top:16px;font-size:15px;color:var(--night-muted)}
 .trust-slide figcaption b{color:#fff;font-weight:650;margin-right:10px}
-.trust-sources{display:flex;flex-wrap:wrap;align-items:center;gap:12px 28px;margin-top:40px}
+.trust-sources{display:flex;flex-wrap:wrap;align-items:center;gap:12px 28px;margin-top:32px}
 .trust-note{display:inline-flex;align-items:center;gap:10px;font-size:16px;font-weight:500;color:var(--night-text)}
 .trust-note svg{width:20px;height:20px;fill:none;stroke:var(--brass);stroke-width:1.6}
 .trust-link{display:inline-flex;gap:8px;font-size:16px;font-weight:500;text-decoration:none;color:var(--night-text);padding-bottom:6px;border-bottom:1px solid rgba(236,231,222,.4);white-space:nowrap;transition:border-color .25s,color .25s}
 .trust-link:hover{border-color:var(--brass);color:var(--brass)}
-.trust-points{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:28px}
-.trust-points div{padding:20px;border-radius:14px;border:1px solid rgba(236,231,222,.16);background:rgba(255,255,255,.06);display:flex;flex-direction:column;gap:6px;transition:background .25s,transform .25s}
+.trust-points{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:24px}
+.trust-points div{padding:18px;border-radius:14px;border:1px solid rgba(236,231,222,.16);background:rgba(255,255,255,.06);display:flex;flex-direction:column;gap:6px;transition:background .25s,transform .25s}
 .trust-points div:hover{background:rgba(255,255,255,.12);transform:translateY(-3px)}
 .trust-points svg{width:22px;height:22px;fill:none;stroke:var(--brass);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;margin-bottom:10px}
 .trust-points b{font:650 16px/1.2 var(--sans);color:#fff}
